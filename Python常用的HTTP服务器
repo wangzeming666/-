@@ -1,0 +1,18 @@
+要使 Python 写的程序能在 Web 上被访问，还需要搭建一个支持 Python 的 HTTP 服务器。
+下面列举一些常见的 Python HTTP 服务器，以及它们目前的大致发展情况，以便用户的对比选择：
+
+Name	         Version	      http 1.1	        Flavour           	Repo.	          Community
+Gunicorn	       0.6.4	         No	        processor/thread	       GIT	          #gunicorn
+uWSGI	           Trunk (253)   	 Yes	      processor/thread	       repo           Mailing List
+FAPWS3	         0.3.1	         No	      	processor/thread	       GIT	          Google Groups
+Aspen			       0.8			       No			    processor/thread		     SVN				    Google Groups
+Mod_WSGI		     3.1			       Yes	    	processor/thread		     SVN				    Google Groups
+wsgiref	Py 	  	 2.6.4		    	 No		    	processor/thread		     SVN			    	Mailing List
+CherryPy		     3.1.2		    	 Yes	    	processor/thread		     SVN			    	Planet, IRC
+Magnum Py		     0.2			       No		    	processor/thread		     SVN			    	Google Groups
+Twisted			     10.0.0		     	 Yes	    	processor/thread	       SVN			    	Community
+Cogen		  	     0.2.1		    	 Yes	    	callback/generator		   SVN			    	Google Groups
+GEvent			     0.12.2	    		 Yes	    	lightweight threads		   Mercurial		  Google Groups
+Tornado	    		 0.2			       Yes	    	callback/generator	     GIT	Google 		Groups
+Eventlet	    	 0.9.6		 	     Yes		    lightweight threads		   Mercurial		  Mailinglist
+Concurrence	  	 tip			       Yes	    	lightweight threads		   GIT	Google 		Groups 		 
