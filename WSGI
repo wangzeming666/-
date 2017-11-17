@@ -1,0 +1,32 @@
+WSGI是什么？
+
+WSGI，全称 Web Server Gateway Interface，或者 Python Web Server Gateway Interface ，是为 Python 语言定义的 Web 服务器和 
+Web 应用程序或框架之间的一种简单而通用的接口。自从 WSGI 被开发出来以后，许多其它语言中也出现了类似接口。
+
+WSGI 的官方定义是，the Python Web Server Gateway Interface。从名字就可以看出来，这东西是一个Gateway，也就是网关。网关的作用就是在协议之间进行转换。
+
+
+WSGI 是作为 Web 服务器与 Web 应用程序或应用框架之间的一种低级别的接口，以提升可移植 Web 应用开发的共同点。WSGI 是基于现存的 CGI 标准而设计的。
+
+很多框架都自带了 WSGI server ，比如 Flask，webpy，Django、CherryPy等等。当然性能都不好，自带的 web server 更多的是测试用途，
+发布时则使用生产环境的 WSGI server或者是联合 nginx 做 uwsgi 。
+
+也就是说，WSGI就像是一座桥梁，一边连着web服务器，另一边连着用户的应用。但是呢，这个桥的功能很弱，有时候还需要别的桥来帮忙才能进行处理。
+WSGI 的作用如图所示：
+
+WSGI的作用
+
+WSGI有两方：“服务器”或“网关”一方，以及“应用程序”或“应用框架”一方。服务方调用应用方，提供环境信息，以及一个回调函数（提供给应用程序
+用来将消息头传递给服务器方），并接收Web内容作为返回值。
+
+所谓的 WSGI中间件同时实现了API的两方，因此可以在WSGI服务和WSGI应用之间起调解作用：从WSGI服务器的角度来说，中间件扮演应用程序，
+而从应用程序的角度来说，中间件扮演服务器。“中间件”组件可以执行以下功能：
+
+重写环境变量后，根据目标URL，将请求消息路由到不同的应用对象。
+允许在一个进程中同时运行多个应用程序或应用框架。
+负载均衡和远程处理，通过在网络上转发请求和响应消息。
+进行内容后处理，例如应用XSLT样式表。
+WSGI 的设计确实参考了 Java 的 servlet。http://www.python.org/dev/peps/pep-0333/ 有这么一段话：
+
+By contrast, although Java has just as many web application frameworks available, Java's "servlet" API makes it possible for 
+applications written with any Java web application framework to run in any web server that supports the servlet API.
